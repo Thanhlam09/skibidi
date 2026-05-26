@@ -1786,17 +1786,9 @@ gg.__namecall = newcclosure(function(...)
 end)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thanhlam09/skibidi/refs/heads/main/lib.lua"))()
 local Window = Library:MakeWin({
-    Name = " SKIBIDI HUB | BETA",      -- Tên cửa sổ
-    HidePremium = false,                -- Ẩn thông tin Premium
-    SaveConfig = true,                  -- Lưu cấu hình
-    ConfigFolder = "DragonHubConfig",   -- Thư mục lưu config
-    IntroEnabled = true,                -- Bật intro
-    IntroText = "Skibidi Hub",           -- Chữ intro
-    IntroIcon = "rbxassetid://6031265976", -- Icon intro
-    Icon = "rbxassetid://6031265976",   -- Icon cửa sổ
-    CloseCallback = function()          -- Hàm khi đóng
-        print("Skibidi Hub Closed")
-    end
+   Title = "Skibidi Hub [ BETA ]",
+  SubTitle = "by Lam",
+  SaveFolder = "Lam Hub | Blox Fruits.lua"
 })
 local Status = Window:MakeTab({
   Title = "Tab Status And Server",
