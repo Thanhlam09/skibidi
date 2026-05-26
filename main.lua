@@ -1791,11 +1791,11 @@ local Window = OrionLib:MakeWindow({
     SaveConfig = true,                  -- Lưu cấu hình
     ConfigFolder = "DragonHubConfig",   -- Thư mục lưu config
     IntroEnabled = true,                -- Bật intro
-    IntroText = "Dragon Hub",           -- Chữ intro
+    IntroText = "Skibidi Hub",           -- Chữ intro
     IntroIcon = "rbxassetid://6031265976", -- Icon intro
     Icon = "rbxassetid://6031265976",   -- Icon cửa sổ
     CloseCallback = function()          -- Hàm khi đóng
-        print("Dragon Hub Closed")
+        print("Skibidi Hub Closed")
     end
 })
 -- Tab 1: Trạng thái & Server
