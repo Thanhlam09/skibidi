@@ -1853,6 +1853,7 @@ local ESP = Window:MakeTab({
 local Player = Window:MakeTab({
   Name = "Tab PVP",
   Icon = "rbxassetid://7251993295"
+})
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
