@@ -9171,5 +9171,78 @@ if Window and Window.MainFrame then
     Window.MainFrame.Visible = true
 end
 ScreenGui.Enabled = true
+-- ========== TẠO NÚT NỔI ĐỂ MỞ GUI ==========
+local FloatingButton = Instance.new("ImageButton")
+FloatingButton.Name = "FloatingButton"
+FloatingButton.Parent = game:GetService("CoreGui")
+FloatingButton.Size = UDim2.new(0, 60, 0, 60)
+FloatingButton.Position = UDim2.new(0, 20, 0.5, -30)
+FloatingButton.BackgroundColor3 = Color3.fromRGB(255, 70, 70)
+FloatingButton.BackgroundTransparency = 0.15
+FloatingButton.Image = "rbxassetid://6031265976"
+FloatingButton.ImageColor3 = Color3.fromRGB(255, 255, 255)
+FloatingButton.ZIndex = 10
+FloatingButton.Visible = true
 
-print("✅ Skibidi Hub đã tải thành công! Nhấn RightShift để ẩn/hiện GUI")
+-- Bo tròn nút
+local btnCorner = Instance.new("UICorner", FloatingButton)
+btnCorner.CornerRadius = UDim.new(1, 0)
+
+-- Hiệu ứng hover
+FloatingButton.MouseEnter:Connect(function()
+    TweenService:Create(FloatingButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 70, 0, 70), BackgroundTransparency = 0}):Play()
+end)
+FloatingButton.MouseLeave:Connect(function()
+    TweenService:Create(FloatingButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 60, 0, 60), BackgroundTransparency = 0.15}):Play()
+end)
+
+-- Kéo thả nút
+local dragStart = nil
+local dragStartPos = nil
+local isDragging = false
+
+FloatingButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        dragStart = input.Position
+        dragStartPos = FloatingButton.Position
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if isDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        FloatingButton.Position = UDim2.new(dragStartPos.X.Scale, dragStartPos.X.Offset + delta.X,
+                                            dragStartPos.Y.Scale, dragStartPos.Y.Offset + delta.Y)
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = false
+    end
+end)
+
+-- Bật/tắt GUI khi bấm nút
+local guiVisible = true
+FloatingButton.MouseButton1Click:Connect(function()
+    guiVisible = not guiVisible
+    if Window and Window.MainFrame then
+        Window.MainFrame.Visible = guiVisible
+    end
+    -- Đổi màu nút khi ẩn
+    FloatingButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(150, 150, 150)
+end)
+
+-- Phím RightShift để bật/tắt
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        guiVisible = not guiVisible
+        if Window and Window.MainFrame then
+            Window.MainFrame.Visible = guiVisible
+        end
+        FloatingButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(150, 150, 150)
+    end
+end)
+
+print("✅ Nút mở GUI đã được tạo! Bấm vào nút hoặc nhấn RightShift để ẩn/hiện.")
