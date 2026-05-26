@@ -1785,67 +1785,95 @@ gg.__namecall = newcclosure(function(...)
     return old(...)
 end)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thanhlam09/skibidi/refs/heads/main/lib.lua"))()
-local Window = Library:new({
-    name = "Dragon Hub [BETA]",
-    textsize = 12,
-    font = "RobotoMono",
-    color = Color3.fromRGB(225, 58, 81)
+local Window = OrionLib:MakeWindow({
+    Name = "🐉 DRAGON HUB | BETA",      -- Tên cửa sổ
+    HidePremium = false,                -- Ẩn thông tin Premium
+    SaveConfig = true,                  -- Lưu cấu hình
+    ConfigFolder = "DragonHubConfig",   -- Thư mục lưu config
+    IntroEnabled = true,                -- Bật intro
+    IntroText = "Dragon Hub",           -- Chữ intro
+    IntroIcon = "rbxassetid://6031265976", -- Icon intro
+    Icon = "rbxassetid://6031265976",   -- Icon cửa sổ
+    CloseCallback = function()          -- Hàm khi đóng
+        print("Dragon Hub Closed")
+    end
 })
-local Status = Window:MakeTab({
-  Title = "Tab Status And Server",
-  Icon = "rbxassetid://7040410130"
+-- Tab 1: Trạng thái & Server
+local TabStatus = Window:MakeTab({
+    Name = " Trạng Thái",
+    Icon = "rbxassetid://7040410130"
 })
-local Setting = Window:MakeTab({
-  Title = "Setting Farm",
-  Icon = "rbxassetid://7734053495"
+
+-- Tab 2: Cài đặt Farm
+local TabSetting = Window:MakeTab({
+    Name = " Cài Đặt",
+    Icon = "rbxassetid://7734053495"
 })
-local Farm = Window:MakeTab({
-  Title = "Tab Farming",
-  Icon = "rbxassetid://7733960981"
+
+-- Tab 3: Farm Chính
+local TabFarm = Window:MakeTab({
+    Name = " Auto Farm",
+    Icon = "rbxassetid://7733960981"
 })
-local Stack = Window:MakeTab({
-  Title = "Tab Stack Farm",
-  Icon = "rbxassetid://13075622619"
+
+-- Tab 4: Farm Stack
+local TabStack = Window:MakeTab({
+    Name = " Farm Stack",
+    Icon = "rbxassetid://13075622619"
 })
-local Other = Window:MakeTab({
-  Title = "Tab Farming Other",
-  Icon = "rbxassetid://10723405360"
+
+-- Tab 5: Farm Khác
+local TabOther = Window:MakeTab({
+    Name = " Farm Khác",
+    Icon = "rbxassetid://10723405360"
 })
-local Shop = Window:MakeTab({
-  Title = "Tab Shop",
-  Icon = "rbxassetid://6031265976"
+
+-- Tab 6: Shop
+local TabShop = Window:MakeTab({
+    Name = "Shop",
+    Icon = "rbxassetid://6031265976"
 })
-local LocalPlayer = Window:MakeTab({
-  Title = "Tab Local Player",
-  Icon = "rbxassetid://13075651575"
+
+-- Tab 7: Local Player
+local TabPlayer = Window:MakeTab({
+    Name = " Người Chơi",
+    Icon = "rbxassetid://13075651575"
 })
-local FruitRaid = Window:MakeTab({
-  Title = "Tab Fruit and Raid",
-  Icon = "rbxassetid://11155986081"
+
+-- Tab 8: Trái Ác Quỷ & Raid
+local TabFruit = Window:MakeTab({
+    Name = " Trái Cây & Raid",
+    Icon = "rbxassetid://11155986081"
 })
-local Event = Window:MakeTab({
-  Title = "Tab Sea Event",
-  Icon = "rbxassetid://10709783577"
+
+-- Tab 9: Sự Kiện Biển
+local TabEvent = Window:MakeTab({
+    Name = " Sự Kiện Biển",
+    Icon = "rbxassetid://10709783577"
 })
-local Race = Window:MakeTab({
-  Title = "Tab Upgrade Race",
-  Icon = "rbxassetid://11162889532"
+
+-- Tab 10: Nâng Cấp Race
+local TabRace = Window:MakeTab({
+    Name = " Nâng Cấp Race",
+    Icon = "rbxassetid://11162889532"
 })
-local Get = Window:MakeTab({
-  Title = "Tab Get\nand Upgrade Items",
-  Icon = "rbxassetid://11156061121"
+
+-- Tab 11: Lấy Vật Phẩm
+local TabGet = Window:MakeTab({
+    Name = " Lấy Vật Phẩm",
+    Icon = "rbxassetid://11156061121"
 })
-local Volcano = Window:MakeTab({
-  Title = "Tab Volcano Event",
-  Icon = "tent"
+
+-- Tab 12: ESP
+local TabESP = Window:MakeTab({
+    Name = " ESP",
+    Icon = "rbxassetid://11155851001"
 })
-local ESP = Window:MakeTab({
-  Title = "Tab ESP",
-  Icon = "rbxassetid://11155851001"
-})
-local Player = Window:MakeTab({
-  Title = "Tab PVP",
-  Icon = "rbxassetid://7251993295"
+
+-- Tab 13: PVP
+local TabPVP = Window:MakeTab({
+    Name = "PVP",
+    Icon = "rbxassetid://7251993295"
 })
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
