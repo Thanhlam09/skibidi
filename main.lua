@@ -1798,83 +1798,65 @@ local Window = OrionLib:MakeWindow({
         print("Skibidi Hub Closed")
     end
 })
--- Tab 1: Trạng thái & Server
-local TabStatus = Window:MakeTab({
-    Name = " Trạng Thái",
-    Icon = "rbxassetid://7040410130"
+local Status = Window:MakeTab({
+  Title = "Tab Status And Server",
+  Icon = "rbxassetid://7040410130"
 })
-
--- Tab 2: Cài đặt Farm
-local TabSetting = Window:MakeTab({
-    Name = " Cài Đặt",
-    Icon = "rbxassetid://7734053495"
+local Setting = Window:MakeTab({
+  Title = "Setting Farm",
+  Icon = "rbxassetid://7734053495"
 })
-
--- Tab 3: Farm Chính
-local TabFarm = Window:MakeTab({
-    Name = " Auto Farm",
-    Icon = "rbxassetid://7733960981"
+local Farm = Window:MakeTab({
+  Title = "Tab Farming",
+  Icon = "rbxassetid://7733960981"
 })
-
--- Tab 4: Farm Stack
-local TabStack = Window:MakeTab({
-    Name = " Farm Stack",
-    Icon = "rbxassetid://13075622619"
+local Stack = Window:MakeTab({
+  Title = "Tab Stack Farm",
+  Icon = "rbxassetid://13075622619"
 })
-
--- Tab 5: Farm Khác
-local TabOther = Window:MakeTab({
-    Name = " Farm Khác",
-    Icon = "rbxassetid://10723405360"
+local Other = Window:MakeTab({
+  Title = "Tab Farming Other",
+  Icon = "rbxassetid://10723405360"
 })
-
--- Tab 6: Shop
-local TabShop = Window:MakeTab({
-    Name = "Shop",
-    Icon = "rbxassetid://6031265976"
+local Shop = Window:MakeTab({
+  Title = "Tab Shop",
+  Icon = "rbxassetid://6031265976"
 })
-
--- Tab 7: Local Player
-local TabPlayer = Window:MakeTab({
-    Name = " Người Chơi",
-    Icon = "rbxassetid://13075651575"
+local LocalPlayer = Window:MakeTab({
+  Title = "Tab Local Player",
+  Icon = "rbxassetid://13075651575"
 })
-
--- Tab 8: Trái Ác Quỷ & Raid
-local TabFruit = Window:MakeTab({
-    Name = " Trái Cây & Raid",
-    Icon = "rbxassetid://11155986081"
+local FruitRaid = Window:MakeTab({
+  Title = "Tab Fruit and Raid",
+  Icon = "rbxassetid://11155986081"
 })
-
--- Tab 9: Sự Kiện Biển
-local TabEvent = Window:MakeTab({
-    Name = " Sự Kiện Biển",
-    Icon = "rbxassetid://10709783577"
+local Event = Window:MakeTab({
+  Title = "Tab Sea Event",
+  Icon = "rbxassetid://10709783577"
 })
-
--- Tab 10: Nâng Cấp Race
-local TabRace = Window:MakeTab({
-    Name = " Nâng Cấp Race",
-    Icon = "rbxassetid://11162889532"
+local Race = Window:MakeTab({
+  Title = "Tab Upgrade Race",
+  Icon = "rbxassetid://11162889532"
 })
-
--- Tab 11: Lấy Vật Phẩm
-local TabGet = Window:MakeTab({
-    Name = " Lấy Vật Phẩm",
-    Icon = "rbxassetid://11156061121"
+local Get = Window:MakeTab({
+  Title = "Tab Get\nand Upgrade Items",
+  Icon = "rbxassetid://11156061121"
 })
-
--- Tab 12: ESP
-local TabESP = Window:MakeTab({
-    Name = " ESP",
-    Icon = "rbxassetid://11155851001"
+local Volcano = Window:MakeTab({
+  Title = "Tab Volcano Event",
+  Icon = "tent"
 })
-
--- Tab 13: PVP
-local TabPVP = Window:MakeTab({
-    Name = "PVP",
-    Icon = "rbxassetid://7251993295"
+local ESP = Window:MakeTab({
+  Title = "Tab ESP",
+  Icon = "rbxassetid://11155851001"
 })
+local Player = Window:MakeTab({
+  Title = "Tab PVP",
+  Icon = "rbxassetid://7251993295"
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
 ScreenGui.Name = "ImageButton"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.ResetOnSpawn = false
@@ -9057,192 +9039,3 @@ spawn(function()
         end)
     end
 end)
--- ========== KHỞI TẠO GUI AN TOÀN ==========
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "SkibidiHubUI"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
-
--- Xóa GUI cũ nếu tồn tại (tránh trùng lặp)
-if gethui then
-    for _, child in ipairs(gethui():GetChildren()) do
-        if child.Name == ScreenGui.Name then
-            child:Destroy()
-        end
-    end
-    ScreenGui.Parent = gethui()
-else
-    for _, child in ipairs(game.CoreGui:GetChildren()) do
-        if child.Name == ScreenGui.Name then
-            child:Destroy()
-        end
-    end
-    ScreenGui.Parent = game.CoreGui
-end
-
--- ========== NÚT MỞ GUI ==========
-local ToggleButton = Instance.new("ImageButton")
-ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ScreenGui
-ToggleButton.Size = UDim2.new(0, 55, 0, 55)
-ToggleButton.Position = UDim2.new(0, 15, 0.5, -27)
-ToggleButton.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
-ToggleButton.BackgroundTransparency = 0.2
-ToggleButton.Image = "rbxassetid://6031265976"
-ToggleButton.ImageColor3 = Color3.fromRGB(255, 70, 70)
-ToggleButton.ZIndex = 10
-ToggleButton.Visible = true
-ToggleButton.Active = true
-ToggleButton.Draggable = true
-
--- Bo góc nút
-local ToggleCorner = Instance.new("UICorner")
-ToggleCorner.CornerRadius = UDim.new(1, 0)
-ToggleCorner.Parent = ToggleButton
-
--- Hiệu ứng hover
-ToggleButton.MouseEnter:Connect(function()
-    ToggleButton.BackgroundTransparency = 0
-    TweenService:Create(ToggleButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 60, 0, 60)}):Play()
-end)
-ToggleButton.MouseLeave:Connect(function()
-    ToggleButton.BackgroundTransparency = 0.2
-    TweenService:Create(ToggleButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 55, 0, 55)}):Play()
-end)
-
--- Kéo thả nút
-local draggingBtn = false
-local dragStartBtn
-local startPosBtn
-
-ToggleButton.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        draggingBtn = true
-        dragStartBtn = input.Position
-        startPosBtn = ToggleButton.Position
-    end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-    if draggingBtn and input.UserInputType == Enum.UserInputType.MouseMovement then
-        local delta = input.Position - dragStartBtn
-        ToggleButton.Position = UDim2.new(startPosBtn.X.Scale, startPosBtn.X.Offset + delta.X, 
-                                          startPosBtn.Y.Scale, startPosBtn.Y.Offset + delta.Y)
-    end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        draggingBtn = false
-    end
-end)
-
--- Biến trạng thái GUI
-local guiVisible = true
-
--- Toggle GUI khi bấm nút
-ToggleButton.MouseButton1Click:Connect(function()
-    guiVisible = not guiVisible
-    if Window and Window.MainFrame then
-        Window.MainFrame.Visible = guiVisible
-    end
-    -- Đổi icon khi ẩn/hiện
-    if guiVisible then
-        ToggleButton.ImageColor3 = Color3.fromRGB(255, 70, 70)
-    else
-        ToggleButton.ImageColor3 = Color3.fromRGB(100, 100, 100)
-    end
-end)
-
--- Phím RightShift để bật/tắt GUI
-UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.RightShift then
-        guiVisible = not guiVisible
-        if Window and Window.MainFrame then
-            Window.MainFrame.Visible = guiVisible
-        end
-        ToggleButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 70, 70) or Color3.fromRGB(100, 100, 100)
-    end
-end)
-
--- Đảm bảo GUI hiển thị sau khi tạo
-wait(1)
-if Window and Window.MainFrame then
-    Window.MainFrame.Visible = true
-end
-ScreenGui.Enabled = true
--- ========== TẠO NÚT NỔI ĐỂ MỞ GUI ==========
-local FloatingButton = Instance.new("ImageButton")
-FloatingButton.Name = "FloatingButton"
-FloatingButton.Parent = game:GetService("CoreGui")
-FloatingButton.Size = UDim2.new(0, 60, 0, 60)
-FloatingButton.Position = UDim2.new(0, 20, 0.5, -30)
-FloatingButton.BackgroundColor3 = Color3.fromRGB(255, 70, 70)
-FloatingButton.BackgroundTransparency = 0.15
-FloatingButton.Image = "rbxassetid://6031265976"
-FloatingButton.ImageColor3 = Color3.fromRGB(255, 255, 255)
-FloatingButton.ZIndex = 10
-FloatingButton.Visible = true
-
--- Bo tròn nút
-local btnCorner = Instance.new("UICorner", FloatingButton)
-btnCorner.CornerRadius = UDim.new(1, 0)
-
--- Hiệu ứng hover
-FloatingButton.MouseEnter:Connect(function()
-    TweenService:Create(FloatingButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 70, 0, 70), BackgroundTransparency = 0}):Play()
-end)
-FloatingButton.MouseLeave:Connect(function()
-    TweenService:Create(FloatingButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 60, 0, 60), BackgroundTransparency = 0.15}):Play()
-end)
-
--- Kéo thả nút
-local dragStart = nil
-local dragStartPos = nil
-local isDragging = false
-
-FloatingButton.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        isDragging = true
-        dragStart = input.Position
-        dragStartPos = FloatingButton.Position
-    end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-    if isDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-        local delta = input.Position - dragStart
-        FloatingButton.Position = UDim2.new(dragStartPos.X.Scale, dragStartPos.X.Offset + delta.X,
-                                            dragStartPos.Y.Scale, dragStartPos.Y.Offset + delta.Y)
-    end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        isDragging = false
-    end
-end)
-
--- Bật/tắt GUI khi bấm nút
-local guiVisible = true
-FloatingButton.MouseButton1Click:Connect(function()
-    guiVisible = not guiVisible
-    if Window and Window.MainFrame then
-        Window.MainFrame.Visible = guiVisible
-    end
-    -- Đổi màu nút khi ẩn
-    FloatingButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(150, 150, 150)
-end)
-
--- Phím RightShift để bật/tắt
-UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.RightShift then
-        guiVisible = not guiVisible
-        if Window and Window.MainFrame then
-            Window.MainFrame.Visible = guiVisible
-        end
-        FloatingButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(150, 150, 150)
-    end
-end)
-
-print("✅ Nút mở GUI đã được tạo! Bấm vào nút hoặc nhấn RightShift để ẩn/hiện.")
