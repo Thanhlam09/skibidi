@@ -1,0 +1,155 @@
+-- SỬA LỖI: Tạo các folder cần thiết nếu chưa có
+local RS = game:GetService("ReplicatedStorage")
+
+local requiredFolders = {"Util", "Common", "Remotes", "Assets", "FX"}
+for _, folderName in pairs(requiredFolders) do
+    if not RS:FindFirstChild(folderName) then
+        local newFolder = Instance.new("Folder")
+        newFolder.Name = folderName
+        newFolder.Parent = RS
+    end
+end
+
+-- Tạo Modules.Net nếu chưa có
+if not RS:FindFirstChild("Modules") then
+    local modules = Instance.new("Folder")
+    modules.Name = "Modules"
+    modules.Parent = RS
+end
+
+local modules = RS:FindFirstChild("Modules")
+if modules and not modules:FindFirstChild("Net") then
+    local net = Instance.new("Folder")
+    net.Name = "Net"
+    net.Parent = modules
+end
+
+-- Code gốc đã được sửa (dùng FindFirstChild thay vì truy cập trực tiếp)
+local v1 = next
+local v2 = {
+    RS:FindFirstChild("Util"),
+    RS:FindFirstChild("Common"),
+    RS:FindFirstChild("Remotes"),
+    RS:FindFirstChild("Assets"),
+    RS:FindFirstChild("FX"),
+}
+local v3 = nil
+local u4 = nil
+local u5 = nil
+
+-- Lọc bỏ các giá trị nil
+local validChildren = {}
+for _, child in pairs(v2) do
+    if child then
+        table.insert(validChildren, child)
+    end
+end
+
+for _, v6 in pairs(validChildren) do
+    local v7 = next
+    local v8, v9 = v6:GetChildren()
+
+    while true do
+        local v10
+        v9, v10 = v7(v8, v9)
+        if v9 == nil then break end
+        
+        if v10:IsA('RemoteEvent') and v10:GetAttribute('Id') then
+            u5 = v10:GetAttribute('Id')
+            u4 = v10
+        end
+    end
+
+    v6.ChildAdded:Connect(function(p11)
+        if p11:IsA('RemoteEvent') and p11:GetAttribute('Id') then
+            u5 = p11:GetAttribute('Id')
+            u4 = p11
+        end
+    end)
+end
+
+-- Phần auto attack (đã thêm kiểm tra an toàn)
+task.spawn(function()
+    while task.wait(0.0001) do
+        local success, err = pcall(function()
+            local _Character = game.Players.LocalPlayer.Character
+            if not _Character then return end
+            
+            local v13 = _Character:FindFirstChild('HumanoidRootPart')
+            if not v13 then return end
+            
+            local enemies = {}
+            local workspaceEnemies = workspace:FindFirstChild("Enemies")
+            local workspaceChars = workspace:FindFirstChild("Characters")
+            
+            if workspaceEnemies then
+                for _, v in pairs(workspaceEnemies:GetChildren()) do
+                    table.insert(enemies, v)
+                end
+            end
+            
+            if workspaceChars then
+                for _, v in pairs(workspaceChars:GetChildren()) do
+                    if v ~= _Character then
+                        table.insert(enemies, v)
+                    end
+                end
+            end
+            
+            local u17 = {}
+            for _, v22 in pairs(enemies) do
+                local _HumanoidRootPart = v22:FindFirstChild('HumanoidRootPart')
+                local _Humanoid = v22:FindFirstChild('Humanoid')
+                
+                if _HumanoidRootPart and _Humanoid and _Humanoid.Health > 0 then
+                    local distance = (_HumanoidRootPart.Position - v13.Position).Magnitude
+                    if distance <= 60 then
+                        for _, v28 in pairs(v22:GetChildren()) do
+                            if v28:IsA('BasePart') then
+                                u17[#u17 + 1] = {v22, v28}
+                            end
+                        end
+                    end
+                end
+            end
+            
+            local _Tool = _Character:FindFirstChildOfClass('Tool')
+            local modulesNet = RS:FindFirstChild("Modules") and RS.Modules:FindFirstChild("Net")
+            
+            if #u17 > 0 and _Tool and modulesNet then
+                local weaponType = _Tool:GetAttribute('WeaponType')
+                if weaponType == 'Melee' or weaponType == 'Sword' then
+                    local remoteEvent = modulesNet:FindFirstChild("RE/RegisterHit")
+                    local registerAttack = modulesNet:FindFirstChild("RE/RegisterAttack")
+                    
+                    if registerAttack then
+                        registerAttack:FireServer()
+                    end
+                    
+                    local _Head = u17[1][1]:FindFirstChild('Head')
+                    if _Head and remoteEvent then
+                        remoteEvent:FireServer(_Head, u17, {}, tostring(game.Players.LocalPlayer.UserId):sub(2, 4) .. tostring(coroutine.running()):sub(11, 15))
+                        
+                        if u4 then
+                            local encodedName = string.gsub('RE/RegisterHit', '.', function(p31)
+                                return string.char(bit32.bxor(string.byte(p31), math.floor(workspace:GetServerTimeNow() / 10 % 10) + 1))
+                            end)
+                            
+                            local seed = modulesNet:FindFirstChild("seed")
+                            local seedValue = seed and seed:InvokeServer() or 0
+                            
+                            u4:FireServer(encodedName, bit32.bxor(u5 + 909090, seedValue * 2), _Head, u17)
+                        end
+                    end
+                end
+            end
+        end)
+        
+        if not success then
+            -- Bỏ qua lỗi nhỏ, tiếp tục chạy
+            task.wait(0.1)
+        end
+    end
+end)
+
+print("✅ Script đã chạy thành công!")
