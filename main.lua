@@ -1786,7 +1786,7 @@ gg.__namecall = newcclosure(function(...)
 end)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thanhlam09/skibidi/refs/heads/main/lib.lua"))()
 local Window = OrionLib:MakeWindow({
-    Name = "🐉 DRAGON HUB | BETA",      -- Tên cửa sổ
+    Name = " DRAGON HUB | BETA",      -- Tên cửa sổ
     HidePremium = false,                -- Ẩn thông tin Premium
     SaveConfig = true,                  -- Lưu cấu hình
     ConfigFolder = "DragonHubConfig",   -- Thư mục lưu config
