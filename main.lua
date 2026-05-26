@@ -5241,8 +5241,10 @@ local FishingRequest = FishReplicated:FindFirstChild("FishingRequest")
 local FishingRemote = FishReplicated:FindFirstChild("FishingRemote")
 local FishingClient = FishReplicated:WaitForChild("FishingClient")
 local Config = require(FishingClient:WaitForChild("Config"))
-local Util = ReplicatedStorage:WaitForChild("Util")
-local GetWaterHeightAtLocation = require(Util:WaitForChild("GetWaterHeightAtLocation"))
+local GetWaterHeightAtLocation = function(pos)
+    local water = workspace:FindFirstChild("WaterBase-Plane")
+    return water and water.Position.Y or 0
+end
 local COMMF_ = Net:FindFirstChild("RF/JobsRemoteFunction")
 local CraftRF = Net:FindFirstChild("RF/Craft")
 local function EnsureRodAndBait()
