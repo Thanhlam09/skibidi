@@ -148,7 +148,7 @@ function CheckQuest()
             NameMon = "Fishman Warrior"
             CFrameQuest = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
             CFrameMon = CFrame.new(60878.30078125, 18.482830047607422, 1543.7574462890625)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
             end
         elseif MyLevel >= 400 and MyLevel <= 449 then
@@ -158,7 +158,7 @@ function CheckQuest()
             NameMon = "Fishman Commando"
             CFrameQuest = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
             CFrameMon = CFrame.new(61922.6328125, 18.482830047607422, 1493.934326171875)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
             end
         elseif MyLevel >= 450 and MyLevel <= 474 then
@@ -168,7 +168,7 @@ function CheckQuest()
             NameMon = "God's Guard"
             CFrameQuest = CFrame.new(-4721.88867, 843.874695, -1949.96643, 0.996191859, -0, -0.0871884301, 0, 1, -0, 0.0871884301, 0, 0.996191859)
             CFrameMon = CFrame.new(-4710.04296875, 845.2769775390625, -1927.3079833984375)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
             end
         elseif MyLevel >= 475 and MyLevel <= 524 then
@@ -178,7 +178,7 @@ function CheckQuest()
             NameMon = "Shanda"
             CFrameQuest = CFrame.new(-7859.09814, 5544.19043, -381.476196, -0.422592998, 0, 0.906319618, 0, 1, 0, -0.906319618, 0, -0.422592998)
             CFrameMon = CFrame.new(-7678.48974609375, 5566.40380859375, -497.2156066894531)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
             end
         elseif MyLevel >= 525 and MyLevel <= 549 then
@@ -316,7 +316,7 @@ function CheckQuest()
             NameMon = "Ship Deckhand"
             CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016)         
             CFrameMon = CFrame.new(1212.0111083984375, 150.79205322265625, 33059.24609375)    
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
             end
         elseif MyLevel >= 1275 and MyLevel <= 1299 then
@@ -326,7 +326,7 @@ function CheckQuest()
             NameMon = "Ship Engineer"
             CFrameQuest = CFrame.new(1037.80127, 125.092171, 32911.6016)   
             CFrameMon = CFrame.new(919.4786376953125, 43.54401397705078, 32779.96875)   
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
             end             
         elseif MyLevel >= 1300 and MyLevel <= 1324 then
@@ -336,7 +336,7 @@ function CheckQuest()
             NameMon = "Ship Steward"
             CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125)         
             CFrameMon = CFrame.new(919.4385375976562, 129.55599975585938, 33436.03515625)      
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
             end
         elseif MyLevel >= 1325 and MyLevel <= 1349 then
@@ -346,7 +346,7 @@ function CheckQuest()
             NameMon = "Ship Officer"
             CFrameQuest = CFrame.new(968.80957, 125.092171, 33244.125)
             CFrameMon = CFrame.new(1036.0179443359375, 181.4390411376953, 33315.7265625)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
             end
         elseif MyLevel >= 1350 and MyLevel <= 1374 then
@@ -356,7 +356,7 @@ function CheckQuest()
             NameMon = "Arctic Warrior"
             CFrameQuest = CFrame.new(5667.6582, 26.7997818, -6486.08984, -0.933587909, 0, -0.358349502, 0, 1, 0, 0.358349502, 0, -0.933587909)
             CFrameMon = CFrame.new(5966.24609375, 62.97002029418945, -6179.3828125)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-6508.5581054688, 5000.034996032715, -132.83953857422))
             end
         elseif MyLevel >= 1375 and MyLevel <= 1424 then
@@ -648,10 +648,10 @@ function CheckQuest()
             NameMon = "Reef Bandits"
             CFrameQuest = CFrame.new(10778.875, -2087.72437, 9265.18359, 0.934615612, -9.33109447e-08, -0.355659455, 9.17655143e-08, 1, -2.12154276e-08, 0.355659455, -1.28090019e-08, 0.934615612)
             CFrameMon = CFrame.new(11019.1318, -2146.06812, 9342.3916, -0.719955266, -1.74275385e-08, 0.69402045, 5.76556367e-08, 1, 8.49211546e-08, -0.69402045, 1.01153624e-07, -0.719955266)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end             
         elseif MyLevel >= 2625 and MyLevel <= 2649 then
             Mon = "Coral Pirate"
@@ -660,10 +660,10 @@ function CheckQuest()
             NameMon = "Coral Pirates"
             CFrameQuest = CFrame.new(10778.875, -2087.72437, 9265.18359, 0.934615612, -9.33109447e-08, -0.355659455, 9.17655143e-08, 1, -2.12154276e-08, 0.355659455, -1.28090019e-08, 0.934615612)
             CFrameMon = CFrame.new(10808.6006, -2030.36145, 9364.2334, -0.775185347, -0.0359364748, 0.6307109, 0.0615428537, 0.989336014, 0.132010356, -0.628728986, 0.141148239, -0.764707148)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end
         elseif MyLevel >= 2650 and MyLevel <= 2674 then
             Mon = "Sea Chanter"
@@ -672,10 +672,10 @@ function CheckQuest()
             NameMon = "Sea Chanters"
             CFrameQuest = CFrame.new(10880.6855, -2086.20044, 10032.624, -0.321384728, 9.87648434e-08, -0.946948707, 7.13271007e-08, 1, 8.00902953e-08, 0.946948707, -4.18033075e-08, -0.321384728)
             CFrameMon = CFrame.new(10671.2715, -2057.59155, 10047.2588, -0.846484065, -3.11045447e-08, 0.532414079, -5.55383117e-08, 1, -2.98785316e-08, -0.532414079, -5.48610757e-08, -0.846484065)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end
         elseif MyLevel >= 2675 and MyLevel <= 2699 then             
             Mon = "Ocean Prophet"
@@ -684,10 +684,10 @@ function CheckQuest()
             NameMon = "Ocean Prophets"
             CFrameQuest = CFrame.new(10880.6855, -2086.20044, 10032.624, -0.321384728, 9.87648434e-08, -0.946948707, 7.13271007e-08, 1, 8.00902953e-08, 0.946948707, -4.18033075e-08, -0.321384728)
             CFrameMon = CFrame.new(11008.5195, -2007.72839, 10223.0791, -0.688615739, 2.33523378e-09, -0.725126445, 2.99292546e-09, 1, 3.78221315e-10, 0.725126445, -1.90980032e-09, -0.688615739)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end
         elseif MyLevel >= 2700 and MyLevel <= 2724 then             
             Mon = "High Disciple"
@@ -696,10 +696,10 @@ function CheckQuest()
             NameMon = "High Disciple"
             CFrameQuest = CFrame.new(9640.08789, -1992.44507, 9613.65234, -0.957327187, 4.11991223e-08, 0.289006323, 1.5775445e-08, 1, -9.02985846e-08, -0.289006323, -8.18860855e-08, -0.957327187)
             CFrameMon = CFrame.new(9750.41602, -1966.93884, 9753.36035, -0.749824047, 5.57797613e-08, -0.661637306, 2.03500754e-08, 1, 6.1243199e-08, 0.661637306, 3.24572511e-08, -0.749824047)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end      
        elseif MyLevel >= 2725 and MyLevel <= 2749 then          
             Mon = "Grand Devotee"
@@ -708,10 +708,10 @@ function CheckQuest()
             NameMon = "Grand Devotee"
             CFrameQuest = CFrame.new(9640.08789, -1992.44507, 9613.65234, -0.957327187, 4.11991223e-08, 0.289006323, 1.5775445e-08, 1, -9.02985846e-08, -0.289006323, -8.18860855e-08, -0.957327187)
             CFrameMon = CFrame.new(9611.70508, -1993.47119, 9882.68848, -0.591375351, 4.14332426e-08, -0.806396425, 4.73774868e-08, 1, 1.66361875e-08, 0.806396425, -2.83668058e-08, -0.591375351)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955, 0.997390985, 1.47309942e-09, -0.0721890926, -4.00651912e-09, 0.99999994, -2.51183763e-09, 0.0721890852, 5.75363091e-10, 0.997390926))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end  
         elseif MyLevel >= 2750 and MyLevel <= 2799 then
             Mon = "Grand Devotee"
@@ -720,10 +720,10 @@ function CheckQuest()
             NameMon = "Grand Devotee"
             CFrameQuest = CFrame.new(9640.08789, -1992.44507, 9613.65234)
             CFrameMon = CFrame.new(9611.70508, -1993.47119, 9882.68848)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
+             args = {"TravelToSubmergedIsland"} game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end         
         elseif MyLevel >= 2800 then
             Mon = "Grand Devotee"
@@ -732,18 +732,18 @@ function CheckQuest()
             NameMon = "Grand Devotee"
             CFrameQuest = CFrame.new(9640.08789, -1992.44507, 9613.65234)
             CFrameMon = CFrame.new(9611.70508, -1993.47119, 9882.68848)
-            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 10000 then
+            if getgenv().AutoFarm and (CFrameQuest.Position - game.Players.Player.Character.HumanoidRootPart.Position).Magnitude > 10000 then
             topos(CFrame.new(-16269.7041, 25.2288494, 1373.65955))
             task.wait(2)
-            local args = {"TravelToSubmergedIsland"}
+             args = {"TravelToSubmergedIsland"}
             game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/SubmarineWorkerSpeak"):InvokeServer(unpack(args))
             end    
         end
     end
 end
 MaterialMon = function()
-    local a = game.Players.LocalPlayer
-    local b = a.Character and a.Character:FindFirstChild("HumanoidRootPart")
+     a = game.Players.Player
+     b = a.Character and a.Character:FindFirstChild("HumanoidRootPart")
     if not b then return end
     if World1 then
         if SelectMaterial == "Angel Wings" then
@@ -822,20 +822,20 @@ MaterialMon = function()
     end
 end
 function UpdateBerriesESP()
-	local CollectionService = game:GetService("CollectionService")
-	local BerryBushes = CollectionService:GetTagged("BerryBush")
+	 CollectionService = game:GetService("CollectionService")
+	 BerryBushes = CollectionService:GetTagged("BerryBush")
 	for _, Bush in pairs(BerryBushes) do
 		pcall(function()
 			for AttributeName, Berry in pairs(Bush:GetAttributes()) do
 				if Berry then
 					if not Bush.Parent:FindFirstChild("BerryESP") then
-						local bill = Instance.new("BillboardGui", Bush.Parent)
+						 bill = Instance.new("BillboardGui", Bush.Parent)
 						bill.Name = "BerryESP"
 						bill.ExtentsOffset = Vector3.new(0, 2, 0)
 						bill.Size = UDim2.new(1, 200, 1, 30)
 						bill.Adornee = Bush.Parent
 						bill.AlwaysOnTop = true
-						local name = Instance.new("TextLabel", bill)
+						 name = Instance.new("TextLabel", bill)
 						name.Font = Enum.Font.GothamSemibold
 						name.TextSize = 14
 						name.TextWrapped = true
@@ -847,10 +847,10 @@ function UpdateBerriesESP()
 						name.Text = Berry
 					end
 					if Bush.Parent:FindFirstChild("BerryESP") then
-						local Player = game.Players.LocalPlayer
+						 Player = game.Players.Player
 						if Player and Player.Character and Player.Character:FindFirstChild("Head") then
-							local Position = Player.Character.Head.Position
-							local Magnitude = (Bush.Parent:GetPivot().Position - Position).Magnitude
+							 Position = Player.Character.Head.Position
+							 Magnitude = (Bush.Parent:GetPivot().Position - Position).Magnitude
 							Bush.Parent.BerryESP.TextLabel.Text = Berry .. "\n" .. math.floor(Magnitude) .. "m"
 						end
 					end
@@ -869,13 +869,13 @@ function UpdateIslandESP()
 			if IslandESP then
 				if v.Name ~= "Sea" then
 					if not v:FindFirstChild("NameEsp") then
-						local bill = Instance.new("BillboardGui", v)
+						 bill = Instance.new("BillboardGui", v)
 						bill.Name = "NameEsp"
 						bill.ExtentsOffset = Vector3.new(0, 1, 0)
 						bill.Size = UDim2.new(1, 200, 1, 30)
 						bill.Adornee = v
 						bill.AlwaysOnTop = true
-						local name = Instance.new("TextLabel", bill)
+						 name = Instance.new("TextLabel", bill)
 						name.Font = "GothamSemibold"
 						name.FontSize = "Size14"
 						name.TextWrapped = true
@@ -887,7 +887,7 @@ function UpdateIslandESP()
 					else
 						v["NameEsp"].TextLabel.Text =
 							v.Name .. "   \n" ..
-							round((game:GetService("Players").LocalPlayer.Character.Head.Position - v.Position).Magnitude / 3) .. " Distance"
+							round((game:GetService("Players").Player.Character.Head.Position - v.Position).Magnitude / 3) .. " Distance"
 					end
 				end
 			else
@@ -1844,7 +1844,7 @@ local Get = Window:MakeTab({
 })
 local Volcano = Window:MakeTab({
   Title = "Tab Volcano Event",
-  Icon = "tent"
+  Icon = "rbxassetid://11155851001"
 })
 local ESP = Window:MakeTab({
   Title = "Tab ESP",
