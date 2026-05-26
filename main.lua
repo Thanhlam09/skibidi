@@ -1799,59 +1799,59 @@ local Window = OrionLib:MakeWindow({
     end
 })
 local Status = Window:MakeTab({
-  Title = "Tab Status And Server",
+  Name = "Tab Status And Server",
   Icon = "rbxassetid://7040410130"
 })
 local Setting = Window:MakeTab({
-  Title = "Setting Farm",
+  Name = "Setting Farm",
   Icon = "rbxassetid://7734053495"
 })
 local Farm = Window:MakeTab({
-  Title = "Tab Farming",
+  Name = "Tab Farming",
   Icon = "rbxassetid://7733960981"
 })
 local Stack = Window:MakeTab({
-  Title = "Tab Stack Farm",
+  Name = "Tab Stack Farm",
   Icon = "rbxassetid://13075622619"
 })
 local Other = Window:MakeTab({
-  Title = "Tab Farming Other",
+  Name = "Tab Farming Other",
   Icon = "rbxassetid://10723405360"
 })
 local Shop = Window:MakeTab({
-  Title = "Tab Shop",
+  Name = "Tab Shop",
   Icon = "rbxassetid://6031265976"
 })
 local LocalPlayer = Window:MakeTab({
-  Title = "Tab Local Player",
+  Name = "Tab Local Player",
   Icon = "rbxassetid://13075651575"
 })
 local FruitRaid = Window:MakeTab({
-  Title = "Tab Fruit and Raid",
+  Name = "Tab Fruit and Raid",
   Icon = "rbxassetid://11155986081"
 })
 local Event = Window:MakeTab({
-  Title = "Tab Sea Event",
+  Name = "Tab Sea Event",
   Icon = "rbxassetid://10709783577"
 })
 local Race = Window:MakeTab({
-  Title = "Tab Upgrade Race",
+  Name = "Tab Upgrade Race",
   Icon = "rbxassetid://11162889532"
 })
 local Get = Window:MakeTab({
-  Title = "Tab Get\nand Upgrade Items",
+  Name = "Tab Get\nand Upgrade Items",
   Icon = "rbxassetid://11156061121"
 })
 local Volcano = Window:MakeTab({
-  Title = "Tab Volcano Event",
+  Name = "Tab Volcano Event",
   Icon = "rbxassetid://11155851001"
 })
 local ESP = Window:MakeTab({
-  Title = "Tab ESP",
+  Name = "Tab ESP",
   Icon = "rbxassetid://11155851001"
 })
 local Player = Window:MakeTab({
-  Title = "Tab PVP",
+  Name = "Tab PVP",
   Icon = "rbxassetid://7251993295"
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
