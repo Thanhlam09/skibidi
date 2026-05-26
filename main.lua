@@ -1875,10 +1875,6 @@ local TabPVP = Window:MakeTab({
     Name = "PVP",
     Icon = "rbxassetid://7251993295"
 })
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
-local UIStroke = Instance.new("UIStroke")
 ScreenGui.Name = "ImageButton"
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.ResetOnSpawn = false
@@ -9061,3 +9057,119 @@ spawn(function()
         end)
     end
 end)
+-- ========== KHỞI TẠO GUI AN TOÀN ==========
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "SkibidiHubUI"
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+-- Xóa GUI cũ nếu tồn tại (tránh trùng lặp)
+if gethui then
+    for _, child in ipairs(gethui():GetChildren()) do
+        if child.Name == ScreenGui.Name then
+            child:Destroy()
+        end
+    end
+    ScreenGui.Parent = gethui()
+else
+    for _, child in ipairs(game.CoreGui:GetChildren()) do
+        if child.Name == ScreenGui.Name then
+            child:Destroy()
+        end
+    end
+    ScreenGui.Parent = game.CoreGui
+end
+
+-- ========== NÚT MỞ GUI ==========
+local ToggleButton = Instance.new("ImageButton")
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ScreenGui
+ToggleButton.Size = UDim2.new(0, 55, 0, 55)
+ToggleButton.Position = UDim2.new(0, 15, 0.5, -27)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+ToggleButton.BackgroundTransparency = 0.2
+ToggleButton.Image = "rbxassetid://6031265976"
+ToggleButton.ImageColor3 = Color3.fromRGB(255, 70, 70)
+ToggleButton.ZIndex = 10
+ToggleButton.Visible = true
+ToggleButton.Active = true
+ToggleButton.Draggable = true
+
+-- Bo góc nút
+local ToggleCorner = Instance.new("UICorner")
+ToggleCorner.CornerRadius = UDim.new(1, 0)
+ToggleCorner.Parent = ToggleButton
+
+-- Hiệu ứng hover
+ToggleButton.MouseEnter:Connect(function()
+    ToggleButton.BackgroundTransparency = 0
+    TweenService:Create(ToggleButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 60, 0, 60)}):Play()
+end)
+ToggleButton.MouseLeave:Connect(function()
+    ToggleButton.BackgroundTransparency = 0.2
+    TweenService:Create(ToggleButton, TweenInfo.new(0.2), {Size = UDim2.new(0, 55, 0, 55)}):Play()
+end)
+
+-- Kéo thả nút
+local draggingBtn = false
+local dragStartBtn
+local startPosBtn
+
+ToggleButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        draggingBtn = true
+        dragStartBtn = input.Position
+        startPosBtn = ToggleButton.Position
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if draggingBtn and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStartBtn
+        ToggleButton.Position = UDim2.new(startPosBtn.X.Scale, startPosBtn.X.Offset + delta.X, 
+                                          startPosBtn.Y.Scale, startPosBtn.Y.Offset + delta.Y)
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        draggingBtn = false
+    end
+end)
+
+-- Biến trạng thái GUI
+local guiVisible = true
+
+-- Toggle GUI khi bấm nút
+ToggleButton.MouseButton1Click:Connect(function()
+    guiVisible = not guiVisible
+    if Window and Window.MainFrame then
+        Window.MainFrame.Visible = guiVisible
+    end
+    -- Đổi icon khi ẩn/hiện
+    if guiVisible then
+        ToggleButton.ImageColor3 = Color3.fromRGB(255, 70, 70)
+    else
+        ToggleButton.ImageColor3 = Color3.fromRGB(100, 100, 100)
+    end
+end)
+
+-- Phím RightShift để bật/tắt GUI
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        guiVisible = not guiVisible
+        if Window and Window.MainFrame then
+            Window.MainFrame.Visible = guiVisible
+        end
+        ToggleButton.ImageColor3 = guiVisible and Color3.fromRGB(255, 70, 70) or Color3.fromRGB(100, 100, 100)
+    end
+end)
+
+-- Đảm bảo GUI hiển thị sau khi tạo
+wait(1)
+if Window and Window.MainFrame then
+    Window.MainFrame.Visible = true
+end
+ScreenGui.Enabled = true
+
+print("✅ Skibidi Hub đã tải thành công! Nhấn RightShift để ẩn/hiện GUI")
