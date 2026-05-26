@@ -2198,9 +2198,7 @@ Shop:AddButton({
     end
 })
 
-local Time = Status:AddParagraph({
-    Title = "Time Zone",
-    Desc = ""
+local Time = Status:AddParagraph("Time Zone", "")
 })
 function UpdateOS()
     date = os.date("*t")
@@ -2223,9 +2221,7 @@ spawn(function()
         game:GetService("RunService").RenderStepped:Wait()
     end
 end)
-local Timmessss = Status:AddParagraph({
-    Title = "Time",
-    Desc = ""
+local Timmessss = Status:AddParagraph("Time", "")
 })
 function UpdateTime()
     GameTime = math.floor(workspace.DistributedGameTime + 0.5)
@@ -2240,9 +2236,7 @@ spawn(function()
         wait()
     end
 end)
-local Miragecheck = Status:AddParagraph({
-    Title = "Mirage Island",
-    Desc = "Status: "
+local Miragecheck = Status:AddParagraph("Mirage Island", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2255,9 +2249,7 @@ spawn(function()
         end
     end)
 end)
-local Kitsunecheck = Status:AddParagraph({
-    Title = "Kitsune Island",
-    Desc = "Status: "
+local Kitsunecheck = Status:AddParagraph("Kitsune Island", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2270,9 +2262,7 @@ spawn(function()
         end
     end)
 end)
-local CPrehistoriccheck = Status:AddParagraph({
-    Title = "Prehistoric Island",
-    Desc = "Status: "
+local CPrehistoriccheck = Status:AddParagraph("Prehistoric Island", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2285,9 +2275,7 @@ spawn(function()
         end
     end)
 end)
-local FrozenIsland = Status:AddParagraph({
-    Title = "Frozen Dimension",
-    Desc = "Status: "
+local FrozenIsland = Status:AddParagraph("Frozen Dimension", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2300,9 +2288,7 @@ spawn(function()
         end
     end)
 end)
-local MobCakePrince = Status:AddParagraph({
-    Title = "Dimension Killed",
-    Desc = ""
+local MobCakePrince = Status:AddParagraph("Dimension Killed", "")
 })
 spawn(function()
     while wait() do
@@ -2321,9 +2307,7 @@ spawn(function()
         end)
     end
 end)
-local TyrantStatus = Status:AddParagraph({
-    Title = "Tyrant of the Skies",
-    Desc = "Status: "
+local TyrantStatus = Status:AddParagraph("Tyrant of the Skies", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2336,9 +2320,7 @@ spawn(function()
         end
     end)
 end)
-local CheckRip = Status:AddParagraph({
-    Title = "Rip_Indra",
-    Desc = "Status: "
+local CheckRip = Status:AddParagraph("Rip_Indra", "Status: ")
 })
 spawn(function()
     while wait() do
@@ -2352,9 +2334,7 @@ spawn(function()
         end)
     end
 end)
-local CheckDoughKing = Status:AddParagraph({
-    Title = "Dough King",
-    Desc = "Status: "
+local CheckDoughKing = Status:AddParagraph("Dough King", "Status: ")
 })
 spawn(function()
     while wait() do
@@ -2368,9 +2348,7 @@ spawn(function()
         end)
     end
 end)
-local EliteHunter = Status:AddParagraph({
-    Title = "Elite Hunter",
-    Desc = "Status: "
+local EliteHunter = Status:AddParagraph("Elite Hunter", "Status: ")
 })
 spawn(function()
     while wait() do
@@ -2387,9 +2365,7 @@ spawn(function()
         end)
     end
 end)
-local Pullever = Status:AddParagraph({
-    Title = "Pull Lever",
-    Desc = "Status: "
+local Pullever = Status:AddParagraph("Pull Lever", "Status: ")
 })
 spawn(function()
     while wait() do
@@ -2402,9 +2378,7 @@ spawn(function()
         end)
     end
 end)
-local FM = Status:AddParagraph({
-    Title = "Full Moon",
-    Desc = ""
+local FM = Status:AddParagraph("Full Moon", "")
 })
 spawn(function()
     while wait() do
@@ -2426,9 +2400,7 @@ spawn(function()
         end)
     end
 end)
-local LegendarySword = Status:AddParagraph({
-    Title = "Legendary Sword",
-    Desc = "Status: "
+local LegendarySword = Status:AddParagraph("Legendary Sword", "Status: ")
 })
 spawn(function()
     pcall(function()
@@ -2446,9 +2418,7 @@ spawn(function()
         end
     end)
 end)
-local Bone = Status:AddParagraph({
-    Title = "Bone",
-    Desc = ""
+local Bone = Status:AddParagraph("Bone", "")
 })
 spawn(function()
     pcall(function()
