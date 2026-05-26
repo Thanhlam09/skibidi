@@ -11,7 +11,7 @@ end
 repeat
     wait()
 until game.Players.LocalPlayer.Character
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/Setting/refs/heads/main/FastMax.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Thanhlam09/skibidi/refs/heads/main/attack"))()
 function CheckQuest() 
     MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
     if World1 then
